@@ -1,6 +1,5 @@
 # Generate Bitcoin Address with C++ (Simple Version)
 
---------
 
 ## Define 声明
 
@@ -9,11 +8,10 @@
 
 ***This project is for entertainment purposes only! The author is not responsible for anything!***
 
-------
 
 ## **AboveALL: Install Openssl library**
 
-------
+
 ## Before
 
 1. Download this git repository to your project folder.
@@ -33,13 +31,13 @@ target_link_libraries([your_target_name] bitaddress)
 #include "ProcessAddress.h"
 ```
 
------
-
 ## Usage
 ```cpp
 std::string mnemonic = GenerateMnemonic(12);
 std::string address = generate_keypair_and_get_address_from_mnemonic(mnemonic.c_str());
 ```
+
+-----
 
 **As you see:**
 
@@ -48,12 +46,14 @@ the **"12"** is a ***int*** number, you can change it to any else number, but th
 the **"address"** is ***string*** type, ~~you can use it to do anything you want~~.
 
 
-------
 ## Last but not Least
 
 the address is available, you can search for it on [BlockChair](https://blockchair.com/) .
 
 ![BlockChair](img/1.jpg)
+
+----
+
 
 You can contact me by email:
 
