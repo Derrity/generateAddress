@@ -48,7 +48,13 @@ the **"address"** is ***string*** type, ~~you can use it to do anything you want
 
 ## Last but not Least
 
-the address is available, you can search for it on [BlockChair](https://blockchair.com/) .
+the address is available, you can take it on [cointools](https://cointools.org/valid-address-checker)
+
+![2](img/2.jpg)
+
+
+
+you can search for it on [BlockChair](https://blockchair.com/) .
 
 ![BlockChair](img/1.jpg)
 
