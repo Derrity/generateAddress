@@ -29,6 +29,6 @@ std::string GenerateMnemonic(int wordCount) {
         used_indices.insert(index);
         mnemonic += bip39_words[index] + " ";
     }
-
+    delete[] bip39_words;
     return mnemonic;
 }
