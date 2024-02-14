@@ -7,10 +7,12 @@
 #include <openssl/rand.h>
 #include <iostream>
 #include <string>
+#include "ProcessAddress.h"
 
 const char *base58_chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
-std::string base58_encode(unsigned char *data, size_t len) {
+
+std::string Bitcoin::base58_encode(unsigned char *data, size_t len) {
     BN_CTX *ctx = BN_CTX_new();
     BIGNUM *bn = BN_new();
     BIGNUM *bn58 = BN_new();
@@ -51,7 +53,7 @@ std::string base58_encode(unsigned char *data, size_t len) {
     return result;
 }
 
-std::string pubkey_to_address(unsigned char *pub_key, size_t pub_key_len) {
+std::string Bitcoin::pubkey_to_address(unsigned char *pub_key, size_t pub_key_len) {
     unsigned char hash[SHA256_DIGEST_LENGTH];
     SHA256_CTX sha256;
     SHA256_Init(&sha256);
@@ -81,10 +83,10 @@ std::string pubkey_to_address(unsigned char *pub_key, size_t pub_key_len) {
     memcpy(addr, versioned, 21);
     memcpy(addr + 21, check_hash, 4);
 
-    return base58_encode(addr, 25);
+    return Bitcoin::base58_encode(addr, 25);
 }
 
-std::string generate_keypair_and_get_address_from_mnemonic(const char *mnemonic) {
+std::string Bitcoin::generate_keypair_and_get_address_from_mnemonic(const char *mnemonic) {
     unsigned char seed[64];
     std::string salt = std::string(mnemonic);
     int r = PKCS5_PBKDF2_HMAC_SHA1(
@@ -118,7 +120,7 @@ std::string generate_keypair_and_get_address_from_mnemonic(const char *mnemonic)
     EC_POINT_point2oct(group, pub_key, POINT_CONVERSION_UNCOMPRESSED, pub_key_bytes, pub_key_len, NULL);
 
     // Convert public key bytes to Bitcoin address
-    std::string address = pubkey_to_address(pub_key_bytes, pub_key_len);
+    std::string address = Bitcoin::pubkey_to_address(pub_key_bytes, pub_key_len);
 
     // Clean up
     BN_free(bn);

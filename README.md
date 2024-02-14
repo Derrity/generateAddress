@@ -34,7 +34,7 @@ target_link_libraries([your_target_name] bitaddress)
 ## Usage
 ```cpp
 std::string mnemonic = GenerateMnemonic(12);
-std::string address = generate_keypair_and_get_address_from_mnemonic(mnemonic.c_str());
+std::string address = Bitcoin::generate_keypair_and_get_address_from_mnemonic(mnemonic.c_str());
 ```
 
 -----
@@ -42,6 +42,10 @@ std::string address = generate_keypair_and_get_address_from_mnemonic(mnemonic.c_
 **As you see:**
 
 the **"12"** is a ***int*** number, you can change it to any else number, but the Standard length is 12.
+
+the **"Bitcoin::"** is a ***class***, and the ***generate_keypai_and_get_address_from_mnemonic()*** is a member function.
+
+in next or future version, the application will have more class like: **Tron** **ETH** and so on, so just wait!
 
 the **"address"** is ***string*** type, ~~you can use it to do anything you want~~.
 
