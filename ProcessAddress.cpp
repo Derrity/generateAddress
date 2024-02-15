@@ -13,7 +13,7 @@
 const char *base58_chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
 
-std::string Bitcoin::base58_encode(unsigned char *data, size_t len) {
+std::string base58_encode(unsigned char *data, size_t len) {
     BN_CTX *ctx = BN_CTX_new();
     BIGNUM *bn = BN_new();
     BIGNUM *bn58 = BN_new();
@@ -84,7 +84,7 @@ std::string Bitcoin::pubkey_to_address(unsigned char *pub_key, size_t pub_key_le
     memcpy(addr, versioned, 21);
     memcpy(addr + 21, check_hash, 4);
 
-    return Bitcoin::base58_encode(addr, 25);
+    return base58_encode(addr, 25);
 }
 
 std::string Bitcoin::generate_keypair_and_get_address_from_mnemonic(const char *mnemonic) {
