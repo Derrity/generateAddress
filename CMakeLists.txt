@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project (bitaddress)
 find_package(OpenSSL REQUIRED)
-add_library(bitaddress STATIC GenerateMnemonic.cpp ProcessAddress.cpp)
+add_library(bitaddress STATIC GenerateMnemonic.cpp ProcessAddress.cpp keccak.cpp)
 target_include_directories(bitaddress PUBLIC include)
 target_link_libraries(bitaddress OpenSSL::SSL OpenSSL::Crypto)
