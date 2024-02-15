@@ -7,6 +7,7 @@
 #include <openssl/rand.h>
 #include <iostream>
 #include <string>
+#include <cstring>
 #include "ProcessAddress.h"
 
 const char *base58_chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
