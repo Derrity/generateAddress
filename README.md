@@ -1,4 +1,4 @@
-# Generate Bitcoin Address with C++ (Simple Version)
+# Generate Address with C++ (Simple Version)
 
 
 ## Define 声明
@@ -45,7 +45,9 @@ the **"12"** is a ***int*** number, you can change it to any else number, but th
 
 the **"Bitcoin::"** is a ***class***, and the ***generate_keypai_and_get_address_from_mnemonic()*** is a member function.
 
-in next or future version, the application will have more class like: **Tron** **ETH** and so on, so just wait!
+now we have `Bitcoin` and `Tron`
+
+in next or future version, the application will have more class like:  **ETH** and so on, so just wait!
 
 the **"address"** is ***string*** type, ~~you can use it to do anything you want~~.
 
