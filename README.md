@@ -27,7 +27,7 @@ target_link_libraries([your_target_name] bitaddress)
 ```
 3. Include the header file in your source code.
 ```cpp
-#include "GenerateMnmonic.h"
+#include "GenerateMnemonic.h"
 #include "ProcessAddress.h"
 ```
 
