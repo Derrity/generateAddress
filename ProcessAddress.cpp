@@ -8,8 +8,7 @@
 #include <iostream>
 #include <string>
 #include <cstring>
-#include "ProcessAddress.h"
-#include "keccak.h"
+#include "main.hpp"
 
 const char *base58_chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
